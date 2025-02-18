@@ -44,7 +44,7 @@ const main = async () => {
     .approve(UNIRouter, AmtADesired);
   await daiContract.connect(impersonatedSigner).approve(UNIRouter, AmtBDesired);
 
-  console.log("-------------------------- Adding liquidity -------------");
+  console.log("--------- Adding liquidity -------------");
 
   await uniswapContract
     .connect(impersonatedSigner)
@@ -59,7 +59,7 @@ const main = async () => {
       deadline
     );
 
-  console.log("-------------------------- liquidity added -------------");
+  console.log("---------- liquidity added -------------");
 
   const usdcBalAfter = await usdcContract.balanceOf(impersonatedSigner.address);
   const daiBalAfter = await daiContract.balanceOf(impersonatedSigner.address);

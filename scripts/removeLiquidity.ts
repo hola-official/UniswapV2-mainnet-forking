@@ -7,6 +7,7 @@ const main = async () => {
   const DAIAddress = "0x6B175474E89094C44Da98b954EedeAC495271d0F";
   const UNIRouter = "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D";
   const UNIFactory = "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f";
+
   const theAddressIFoundWithUSDCAndDAI =
     "0xf584f8728b874a6a5c7a8d4d387c9aae9172d621";
 
@@ -33,9 +34,11 @@ const main = async () => {
     "impersonneted acct usdc bal BA:",
     ethers.formatUnits(usdcBal, 6)
   );
-  console.log(`impersonneted acct dai bal BA:, ${ethers.formatUnits(daiBal, 18)}\n`);
+  console.log(
+    `impersonneted acct dai bal BA:, ${ethers.formatUnits(daiBal, 18)}\n`
+  );
 
-  // Setup amounts
+  // Setup amounts and deadline
   let AmtADesired = ethers.parseUnits("99000", 6);
   let AmtBDesired = ethers.parseUnits("99000", 18);
   let amountAMin = ethers.parseUnits("98000", 6);
@@ -69,7 +72,7 @@ const main = async () => {
 
   console.log("------------- Tokens approved -------------\n");
 
-  console.log("-------------------------- Adding liquidity -------------");
+  console.log("------------- Adding liquidity -------------");
 
   // Add liquidity
   const tx = await uniswapContract
@@ -95,12 +98,12 @@ const main = async () => {
   const lpBalance = await lpToken.balanceOf(impersonatedSigner.address);
 
   console.log("LP tokens received:", ethers.formatUnits(lpBalance, 18));
-  
+
   console.log("-------------- removing liquidity -------------");
 
   // Approve and remove liquidity
   await lpToken.connect(impersonatedSigner).approve(UNIRouter, lpBalance);
-  
+
   await uniswapContract
     .connect(impersonatedSigner)
     .removeLiquidity(
