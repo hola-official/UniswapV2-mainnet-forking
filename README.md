@@ -49,7 +49,7 @@ $ npx hardhat vars set ALCHEMY_API_KEY
 ## Scripts
 
 ```bash
-npx hardhat run scripts/filename.ts
+$ npx hardhat run scripts/filename.ts
 ```
 
 ## Contributing
