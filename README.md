@@ -28,10 +28,12 @@ Before you begin, ensure you have the following installed:
 
 ## Install Dependencies:
 
-```bash
+```shell
   yarn install
+  ```
 
 **Or**
 
-``bash
+```shell
 npm install
+```
