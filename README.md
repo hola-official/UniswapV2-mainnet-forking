@@ -23,17 +23,35 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/uniswap-v2-router-forking.git
+   $ git clone https://github.com/your-username/uniswap-v2-router-forking.git
    cd uniswap-v2-router-forking
+   ```
 
 ## Install Dependencies:
 
 ```shell
-  yarn install
-  ```
+  $ yarn install
+```
 
 **Or**
 
 ```shell
-npm install
+$ npm install
 ```
+
+## Configuration hardhat variables
+
+```shell
+$ npx hardhat vars set ALCHEMY_API_KEY
+✔ Enter value: ********************************
+```
+
+## Scripts
+
+```bash
+npx hardhat run scripts/filename.ts
+```
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
