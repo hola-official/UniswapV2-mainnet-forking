@@ -1,13 +1,37 @@
-# Sample Hardhat Project
+# Uniswap V2 Router Mainnet Forking
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+This repository demonstrates how to use [Hardhat](https://hardhat.org/) to fork the Ethereum mainnet and interact with Uniswap V2 Router functions. It includes scripts for adding/removing liquidity, swapping tokens, and testing various Uniswap V2 Router functionalities in a local forked environment.
 
-Try running some of the following tasks:
+## Features
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
-```
+- **Mainnet Forking**: Fork the Ethereum mainnet to test Uniswap V2 Router interactions locally.
+- **Uniswap V2 Router Functions**: Examples for:
+  - Adding and removing liquidity.
+  - Swapping tokens (exact tokens for tokens, tokens for ETH, etc.).
+  - Supporting fee-on-transfer tokens.
+- **Impersonated Accounts**: Use Hardhat's `impersonateAccount` to simulate transactions from any Ethereum address.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/)
+- [Hardhat](https://hardhat.org/)
+
+## Setup
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/uniswap-v2-router-forking.git
+   cd uniswap-v2-router-forking
+
+## Install Dependencies:
+
+```bash
+  yarn install
+
+**Or**
+
+``bash
+npm install
